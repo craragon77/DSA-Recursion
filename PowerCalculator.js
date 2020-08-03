@@ -1,9 +1,15 @@
-const powerCalculator = function (base, exp){
-    if (exp > 0){
-        return console.log('exponent must be greater than or equal to one')
+const powerCalculator = function(base, exp) {
+    if(exp < 0){
+      return 'exp must be positive';
     }
-    //is this even a regressive algorithm?
-    else{
-        console.log(powerCalculator(base ^ exp))
+    if (exp === 0) {
+      return 1;
+    } else {
+      return base * powerCalculator(base, exp-1);
     }
-}
+  }
+  
+  let base = 10;
+  let exp = -3;
+  
+  powerCalculator(base, exp)

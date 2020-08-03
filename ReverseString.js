@@ -1,7 +1,8 @@
-const reverseString = function(array){
-    if (array.length === 1){
-        return console.log(array)
-    }
-
-    return console.log(reverseString(array).reverse())
-}
+function reverseString(str) {
+    if (str === "") // exit condition
+      return "";
+    
+    else
+      return reverseString(str.substr(1)) + str.charAt(0);
+  }
+  reverseString("hello");

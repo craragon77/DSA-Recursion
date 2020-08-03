@@ -1,6 +1,14 @@
-const triangle = function(nth){
-    if(nth.length === 1){
-        return nth
+const triangle = function(theNumber){
+    if(theNumber <= 0){
+      return 'number must be greater than 1'
+    } else if (theNumber === 1) {
+      return theNumber
+    } else{
+      let next = theNumber - 1;
+      let formula = theNumber* (theNumber+ 1) / 2;
+      theNumber + triangle(next)
+      console.log(theNumber, formula)
     }
-    return triangle((nth * (nth + 1))/2)
-}
+  }
+  
+  triangle(15)

@@ -1,12 +1,13 @@
 const sheepCount = function (sheep){
-    if(sheep.length === 0){
-        return 'All of the sheep jumped over the fence!'
+    if(sheep === 0){
+        console.log('All of the sheep jumped over the fence!')
     }
-    return (
-        console.log('Another sheep jumps over the fense'),
-        console.log(sheepCount(sheep.length) - sheep[1])
-    )
-}
+    else {
+        console.log(`${sheep}: Another sheep jumps over the fence`);
+        //would call it again until its zero
+        sheepCount(sheep - 1);
+    }
+};
 
-let flock = [3, 2, 1];
-console.log(sheepCount(flock))
+let flock = 3;
+sheepCount(flock)
